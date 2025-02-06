@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    padding:0;
+    margin:0;
+    --cor-primaria:rgb(36,0,65);
+    --cor-secundaria: rgb(7,210,221);
+    --cor-texto:rgb(51,66,78);
+    box-sizing: border-box;
+    font-family: "Bona Nova SC", serif;
+    
+}
+
+body{
+    padding: 50px;
+    text-align: center;
+    font-weight: bold;
+    background:linear-gradient(to top, var(--cor-primaria) 10%, var(--cor-secundaria));
+    height: 100%;
+}
+header{
+    margin-bottom: 55px;
+}
+h1{
+    color:black;
+    font-size:80px;
+    position: absolute;
+    
+}
+main{
+    align-content: center;
+    background-color: white;
+    width: 450px;
+    height:300px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 10;
+    position: relative;
+}
+form{
+    text-align: center;
+    margin: 10px;
+}
+button{
+    background: var(--cor-secundaria);
+    padding: 5px;
+    color:white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow:  0 0 10px var(--cor-primaria);
+    transition: 0.3s;
+    animation: glow 1.5s infinite ;
+}
+button:hover{
+    background: var(--cor-primaria);
+    box-shadow:  0 0 20px var(--cor-primaria), 0 0 40px var(--cor-primaria);
+}
+@keyframes glow {
+    from{
+        box-shadow: 0 0 10px var(--cor-secundaria);
+    }
+    to {
+        box-shadow: 0 0 20 var(--cor-secundaria);
+    }
+}
+input{
+    border-radius: 4px;
+    padding: 10px;
+    border-style: none;
+}
