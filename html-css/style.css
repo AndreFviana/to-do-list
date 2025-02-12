@@ -152,7 +152,7 @@ header{
     background:#935169 ;
 }
 .done h3{
-    text-decoration: line-through;
+    text-decoration: none;
     color:white;
     font-style: italic;
 }

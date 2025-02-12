@@ -5,6 +5,7 @@ const todoList = document.querySelector("#todo-list");
 const editForm = document.querySelector("#edit-form");
 const editInput = document.querySelector("#edit-input");
 const cancelEditBtn = document.querySelector("#cancel-edit-btn");
+let todoTitle;
 
 //eventos
 
@@ -18,7 +19,15 @@ todoForm.addEventListener("submit", (e)=>{
     }
 })
 
+document.addEventListener("click", (e)=>{
+    const targetEl = e.target;
+    const parentEl = targetEl.closest("div")
 
+    if( targetEl.classList.contains("finish-todo")){
+        targetEl.style.textDecoration = "line-through"
+    }
+    
+})
 
 //funções
 function LimparInput(){
@@ -28,12 +37,10 @@ function LimparInput(){
 
 const saveTodo = (inputValue)=>{
     const todo = document.createElement("div")
-    todo.classList.add("todo")
+    todo.classList.add("todo", "done")
     
-    const todoTitle = document.createElement("h3")
+    let todoTitle = document.createElement("h3")
     todoTitle.innerText = inputValue
-    todo.classList.add("done")
-    todo.appendChild(todoTitle);
 
     //criando botão de finalizar tarefa
     const doneBtn = document.createElement("button")
@@ -54,10 +61,12 @@ const saveTodo = (inputValue)=>{
     <i></i>`
     deleteBtn.innerText = `-`
 
+    todo.appendChild(todoTitle);
     todo.appendChild(doneBtn)
     todo.appendChild(editBtn)
     todo.appendChild(deleteBtn)
     todoList.appendChild(todo)
+    
 
     LimparInput();    
 }
