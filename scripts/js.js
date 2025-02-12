@@ -23,9 +23,13 @@ document.addEventListener("click", (e)=>{
     const targetEl = e.target;
     const parentEl = targetEl.closest("div")
 
-    if( targetEl.classList.contains("finish-todo")){
-        targetEl.style.textDecoration = "line-through"
+    if ( targetEl.classList.contains("finish-todo")){
+        parentEl.style.textDecoration = "line-through"
     }
+    if ( targetEl.classList.contains("remove-todo")){
+        parentEl.remove()
+    }
+    
     
 })
 
