@@ -6,6 +6,7 @@ const editForm = document.querySelector("#edit-form");
 const editInput = document.querySelector("#edit-input");
 const cancelEditBtn = document.querySelector("#cancel-edit-btn");
 let todoTitle;
+let oldInputValue;
 
 //eventos
 
@@ -19,9 +20,11 @@ todoForm.addEventListener("submit", (e)=>{
     }
 })
 
+//Este evento adiciona, deleta, e edita as tarefas ao clicar nos botões
 document.addEventListener("click", (e)=>{
     const targetEl = e.target;
     const parentEl = targetEl.closest("div")
+    let todoTilte;
 
     if ( targetEl.classList.contains("finish-todo")){
         parentEl.style.textDecoration = "line-through"
@@ -29,13 +32,24 @@ document.addEventListener("click", (e)=>{
     if ( targetEl.classList.contains("remove-todo")){
         parentEl.remove()
     }
-    
-    
+    if (targetEl.classList.contains("edit-todo")){
+        toggleForms();
+
+        editInput.value = todoTitle
+        oldInputValue.value = todoTitle
+    } 
 })
+
+
 
 //funções
 function LimparInput(){
     todoInput.value = ""
+}
+const toggleForms =()=>{
+    editForm.classList.toggle("esconder")
+    todoForm.classList.toggle("esconder")
+    todoList.classList.toggle("esconder")
 }
 
 
